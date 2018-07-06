@@ -1,0 +1,172 @@
+input,
+textarea,
+select,
+button,
+a,
+body
+	font-family: 'Montserrat', Arial, sans-serif
+	color: $black-300
+	font-size: 14px
+	line-height: 1.4
+
+a
+	+min-screen($desctop)
+		&:hover
+			color: $pink
+
+h1
+	font-size: 48px
+	margin: .5em 0 1em
+	font-weight: normal
+	+min-screen($tablet)
+		font-size: 64px
+h2
+	font-size: 32px
+	margin: .5em 0 1em
+	font-weight: normal
+	+min-screen($tablet)
+		font-size: 40px
+h3
+	font-size: 28px
+	font-weight: normal
+h4
+	font-size: 26px
+	font-weight: normal
+h5
+	font-size: 24px
+	font-weight: normal
+h6
+	font-size: 20px
+	font-weight: normal
+
+p
+	font-size: 18px
+	margin: .5em 0
+	+min-screen($tablet)
+		font-size: 20px
+
+.yellow-mark
+	display: inline-block
+	font-weight: 600
+	text-align: center
+	font-size: 8px
+	font-family: Arial, sans-serif
+	color: $black-300
+	line-height: 1
+	vertical-align: middle
+	margin-right: 7px
+	background-color: $yellow
+	padding: 4px 5px
+	border-radius: 7px
+
+.color-invert-block
+	background-color: $black-300
+	color: $white
+
+.color-gray
+	color: $gray
+.color-gray-dark
+	color: $gray-600
+
+.pink-link
+	font-size: inherit
+	font-weight: 500
+	color: $pink
+
+.center-text
+	text-align: center
+
+.right-text
+	text-align: right
+
+.left-text
+	text-align: left
+
+.right-text-sm
+	+min-screen($tablet)
+		text-align: right
+
+.right-text-md
+	+min-screen($desctop)
+		text-align: right
+
+.center-text-sm
+	+min-screen($tablet)
+		text-align: center
+
+.center-text-md
+	+min-screen($desctop)
+		text-align: center
+
+.left-text-sm
+	+min-screen($tablet)
+		text-align: left
+
+.left-text-md
+	+min-screen($desctop)
+		text-align: left
+
+.block-on-mobile
+	display: block
+	+min-screen($tablet)
+		display: inline
+
+.block-on-tablet
+	display: block
+	+min-screen($desctop)
+		display: inline
+
+.inline-on-mobile
+	display: inline
+	+min-screen($tablet)
+		display: block
+
+.inline-on-tablet
+	display: inline
+	+min-screen($desctop)
+		display: block
+
+
+.clipboard_copy
+	cursor: pointer
+	display: inline-block
+
+%text-gradient
+	display: inline-block
+	color: transparent
+	// background: linear-gradient(to left, $green-400, $blue-400)
+	-webkit-background-clip: text
+	background-clip: text
+	+ie-screen
+		// color: $blue-400
+		background: none
+
+.text-gradient
+	@extend %text-gradient
+
++min-screen($desctop)
+	.text-gradient
+		display: inline-block
+		color: transparent
+		// background: linear-gradient(to left, $green-400, $blue-400)
+		-webkit-background-clip: text
+		background-clip: text
+		+ie-screen
+			// color: $blue-400
+			background: none
+
+.ui-tooltip
+	color: white
+	position: absolute
+	z-index: 9990
+	padding: 5px 5px
+	font-size: 11px
+	line-height: 16px
+	text-align: center
+	border-radius: 3px
+	letter-spacing: 0.025em
+	max-width: calc((1680px - 10vw) / 3 - 32px + 96px)
+	background-color: $black
+
+.ui-helper-hidden-accessible
+	display: none

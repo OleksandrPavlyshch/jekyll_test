@@ -1,0 +1,50 @@
+<header id="header" class="header" role="banner">
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+
+	<div class="container">
+		<div class="row">
+			<div class="header-left col-xs-4">
+				<a class="logo" rel="author" href="{{ "/" | relative_url }}" title="{{ site.title | escape }}">
+					{% include selenide-logo.svg %}
+				</a>
+			</div>
+
+			<div class="header-right col-xs-8">
+
+
+				{%- if page_paths -%}
+					<nav class="header_menu">
+						<ul class="header_menu-list">
+							{%- for path in page_paths -%}
+								{%- assign my_page = site.pages | where: "path", path | first -%}
+								
+								{%- if my_page.title and my_page.exclude_from_nav != true -%}
+									<li class="header_menu-item">
+									{{my_page.exclude_from_nav}}
+										<a href="{{ my_page.url | relative_url }}" class="header_menu-link">{{ my_page.title | escape }}</a>
+										<ul class="header_submenu">
+											<li class="header_submenu-item">
+												<a class="header_submenu-link" href="#">Why Selenise?</a>
+											</li>
+											<li class="header_submenu-item">
+												<a class="header_submenu-link" href="#">Why Selenise?</a>
+											</li>
+											<li class="header_submenu-item">
+												<a class="header_submenu-link" href="#">Why Selenise?</a>
+											</li>
+										</ul>
+									</li>
+								{%- endif -%}
+							{%- endfor -%}
+						</ul>
+					</nav>
+				{%- endif -%}
+				<button class="toggle-menu-button">
+					<span></span>
+				</button>
+			</div>
+			
+		</div>
+	</div>
+</header>

@@ -1,3 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+util_node_js/node_modules
+util_node_js/source/bower
+util_node_js/node_modules
+util_node_js/build
