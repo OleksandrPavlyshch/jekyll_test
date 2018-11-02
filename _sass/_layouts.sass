@@ -1,0 +1,109 @@
+// default layout
+// @import flexboxgrid
+
+
+.full-width
+	margin-left: -24px
+	margin-right: -24px
+	+min-screen($desktop)
+		margin-left: calc(-50vw + #{$desktop/2 - 24}px)
+		margin-right: calc(-50vw + #{$desktop/2 - 24}px)
+
+body,
+html
+	height: 100vh
+	min-height: 100vh
+
+body
+	min-width: 320px
+	min-height: 320px
+	background-color: $white
+	display: flex
+	flex-direction: column
+	+min-screen($mobile)
+		overflow-x: hidden
+
+.page-content
+	padding-top: 64px
+	flex: 1
+
+.row +.row
+	margin-top: 1rem
+//denug begin
+// .hero
+	// .container
+	// 	border: 1px solid $blue-400
+	// .row
+	// 	border: 1px solid $blue-400
+	// .col-xs-6,
+	// .col-xs-5,
+	// .col-xs-3,
+	// .col-xs-4,
+	// .col-xs-2,
+	// .col-xs
+	// 	border: 1px solid $blue-400
+	// 	min-height: 100px
+	// .box-row
+	// 	border: 1px solid $blue-400
+	// 	background-color: rgba($blue-400, .3)
+//denug end
+
+.image-ilustration
+	max-width: 95%
+	display: block
+	margin: 60px auto 60px
+
+.container
+	@extend .wrapper
+	@extend .container-fluid
+
+
+
+.hide-on-tablet
+	display: block
+	+max-screen($desktop + 1)
+		display: none
+
+.hide-on-mobile
+	display: block
+	+max-screen($tablet + 1)
+		display: none
+
+.show-on-desctop
+	display: none
+	+min-screen($desktop + 1)
+		display: block
+
+.show-on-tablet
+	display: none
+	+min-screen($tablet + 1)
+		display: block
+
+.clearfix
+	*zoom: 1
+
+.clearfix:before,
+.clearfix:after
+	content: ""
+	display: table
+	line-height: 0
+
+.clearfix:after
+	clear: both
+
+a,
+a:before,
+.button,
+button,
+button:before,
+input[type="button"],
+input[type="submit"]
+	transition: border-color .1s ease-in, color .1s ease-in, background-color .1s ease-in
+
+
+
+.hide
+	display: none !important
+
+.hidden
+	display: none
