@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>My First Experience with the Dangers of Documentation</title>
+<title>Try AsciiDoc</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,31 +432,120 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>My First Experience with the Dangers of Documentation</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>In my world, we don&#8217;t have to worry about mutant, script-injecting warlocks.
-No.
-We have something far worse.
-We&#8217;re plagued by Wolpertingers.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_origins">Origins</h2>
+<h2 id="_try_asciidoc">Try AsciiDoc</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You may not be familiar with these <a href="https://en.wikipedia.org/wiki/Wolpertinger">ravenous beasts</a>, but, trust me, they&#8217;ll eat your shorts and suck the loops from your code.</p>
+<p>There is <em>no reason</em> to prefer <a href="http://daringfireball.net/projects/markdown/">Markdown</a>:
+it has <strong>all the features</strong>
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+and more!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Great projects use it, including Git, WeeChat and Pacman!
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_comparison">Comparison</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Snippets of markup <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="3"><p class="tableblock"><strong>Link</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsciiDoc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://example.com">Dummy</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Markdown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[Dummy](<a href="http://example.com" class="bare">http://example.com</a>)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Textile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>"Dummy":http://example.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="3"><p class="tableblock"><strong>Face</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsciiDoc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Either <strong>bold</strong> or <em>italic</em></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Markdown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Either <strong>bold</strong> or <strong>italic</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Textile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Either <strong>bold</strong> or <em>italic</em></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="3"><p class="tableblock"><strong>Header</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsciiDoc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>== Level 2 ==</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Markdown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>## Level 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Textile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h2.  Level 2</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ruby_code_to_render_asciidoc">Ruby code to render AsciiDoc</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">require 'asciidoctor'  <b class="conum">(1)</b>
+
+puts Asciidoctor.render_file('sample.adoc', :header_footer =&gt; true)  <b class="conum">(2)</b></code></pre>
 </div>
 </div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Imports the library</p>
+</li>
+<li>
+<p>Reads, parses and renders the file</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>And here is some silly math:
+e<sup>πi</sup> + 1 = 0 and H<sub>2</sub>O.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See <a href="http://asciidoc.org/userguide.html">the user guide</a>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. More snippets in <a href="http://powerman.name/doc/asciidoc">the cheatsheet</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-07 21:03:36 EET
+Last updated 2018-11-07 21:17:07 EET
 </div>
 </div>
 </body>
